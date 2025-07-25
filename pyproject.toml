@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "irhm"
+description = "PyTerrier for IRHM course"
+readme = "README.md"
+authors = [
+    {name = "Craig Macdonald", email = "craig.macdonald@glasgow.ac.uk"},
+]
+classifiers = [
+  "Programming Language :: Python",
+  "Operating System :: OS Independent",
+  "Topic :: Text Processing",
+  "Topic :: Text Processing :: Indexing",
+]
+requires-python = ">=3.10"
+dynamic = ["version", "dependencies"]
+
+[tool.setuptools.dynamic]
+version = {attr = "irhm.__version__"}
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+exclude = ["tests"]
+
+[project.urls]
+Repository = "https://github.com/cmacdonald/irhm"
+"Bug Tracker" = "https://github.com/cmacdonald/irhm/issues"
