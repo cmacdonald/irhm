@@ -28,3 +28,6 @@ exclude = ["tests"]
 [project.urls]
 Repository = "https://github.com/cmacdonald/irhm"
 "Bug Tracker" = "https://github.com/cmacdonald/irhm/issues"
+
+[project.entry-points."pyterrier.dataset_provider"]
+irhm = "irhm._datasets:IRHMDatasetProvider"
