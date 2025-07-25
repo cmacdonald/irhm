@@ -6,5 +6,5 @@ PyTerrier for IRHM course
 ## Provides
  - custom dataset(s) for the course
 
-## TODO:
+## TODO
  - specify exact pyterrier version
