@@ -1,1 +1,2 @@
 pyterrier[all]==1.0.0
+gensim # needed for Ex1
