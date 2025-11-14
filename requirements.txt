@@ -1,1 +1,1 @@
-python-terrier
+pyterrier[all]==1.0.0
