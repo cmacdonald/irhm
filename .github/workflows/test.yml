@@ -38,13 +38,13 @@ jobs:
          pip install -e .
 
      - name: Unit Test
+       env:
+        IRHM_TEST_USERNAME: ${{ secrets.IRHM_TEST_USERNAME }}
+        IRHM_TEST_PASSWORD: ${{ secrets.IRHM_TEST_PASSWORD }}
        run: |
          pytest --durations=20 -p no:faulthandler --json-report --json-report-file ${{ env.runtag }}.results.json --cov irhm --cov-report json:${{ env.runtag }}.coverage.json tests/
 
      - name: Report Test Results
-       env:
-        IRHM_TEST_USERNAME: ${{ secrets.IRHM_TEST_USERNAME }}
-        IRHM_TEST_PASSWORD: ${{ secrets.IRHM_TEST_PASSWORD }}
        if: always()
        run: |
          printf "**Test Results**\n\n" >> $GITHUB_STEP_SUMMARY
