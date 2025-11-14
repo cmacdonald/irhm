@@ -7,7 +7,7 @@ class TestDataset(unittest.TestCase):
         username = os.environ["IRHM_TEST_USERNAME"]
         password = os.environ["IRHM_TEST_PASSWORD"]
         dataset = pt.get_dataset("irhm:50pct", user=username, password=password)
-        topics = dataset.get_topics("train")
-        qrels = dataset.get_qrels("train")
+        topics = dataset.get_topics("training")
+        qrels = dataset.get_qrels("training")
         self.assertTrue(len(topics)> 0)
         self.assertTrue(len(qrels)> 0)
