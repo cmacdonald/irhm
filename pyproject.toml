@@ -18,6 +18,12 @@ classifiers = [
 requires-python = ">=3.10"
 dynamic = ["version", "dependencies"]
 
+
+[project.optional-dependencies]
+ex2 = [
+  'lightgbm==2.2.3',
+]
+
 [tool.setuptools.dynamic]
 version = {attr = "irhm.__version__"}
 dependencies = {file = ["requirements.txt"]}
