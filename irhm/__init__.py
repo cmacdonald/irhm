@@ -3,10 +3,10 @@
 __version__ = '0.1.4'
 
 __all__ = [
-  'assert_version'
+  'assert_versions_ex2'
 ]
 
-def assert_version(pkg, min_version=None, max_version=None):
+def _assert_version(pkg, min_version=None, max_version=None):
     from importlib.metadata import version, PackageNotFoundError
     from packaging.version import parse
     try:
@@ -21,3 +21,9 @@ def assert_version(pkg, min_version=None, max_version=None):
         raise AssertionError(f"{pkg} {installed} must be < {max_version}")
 
     print(f"{pkg} {installed} ✓")
+
+def assert_versions_ex2():
+    _assert_version("pyterrier", min_version="1.0.4")
+    _assert_version("pyterrier-caching", min_version="0.5.6")
+    _assert_version("lightgbm", max_version="2.2.3")
+    _assert_version("scikit-learn", max_version="1.7.2")
