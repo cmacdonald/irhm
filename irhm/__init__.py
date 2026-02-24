@@ -1,6 +1,6 @@
 """Top-level package for IRHM."""
 
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 
 __all__ = [
   'assert_versions_ex2'
